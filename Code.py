@@ -29,6 +29,7 @@ def main():
 
    
    while not onFinish:
+      #check the whole, to not get out from maze
        if onStart == True and front_distance.get_distance(MM) >= 3000:
            drivetrain.turn_for(RIGHT, 90, DEGREES)
        elif front_distance.get_distance(MM) > 250:
@@ -37,6 +38,7 @@ def main():
        else:
            drivetrain.turn_for(RIGHT, 90, DEGREES)
 
+      #check if he is on start or finish
        if location.position(X, MM)>=115 and location.position(X, MM)<=145 and location.position(Y,MM)>=-915 and location.position(Y,MM)<=-885:
            onStart = True
        else:
@@ -66,7 +68,7 @@ def main():
        else:
             drivetrain.turn_for(RIGHT, 90, DEGREES)
            
-
+    #again check location
        if location.position(X, MM)>=115 and location.position(X, MM)<=145 and location.position(Y,MM)>=-915 and location.position(Y,MM)<=-885:
            onStart = True
        else:
